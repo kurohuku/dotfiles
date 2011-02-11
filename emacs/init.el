@@ -41,3 +41,39 @@
 
 ;; show paren
 (show-paren-mode)
+
+
+(icomplete-mode 1)
+
+;;auto save and backup
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;;ls --color
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;;行の折り返し
+(setq truncate-lines t)
+(setq truncate-partial-width-windows t)
+
+
+;;動的略語展開
+(setq dabbrev-case-fold-search nil)
+
+;;narrowingの許可
+(put 'narrow-to-region 'disabled nil)
+
+(display-time)
+
+(partial-completion-mode 1)
+
+(setq completion-ignore-case t)
+
+(icomplete-mode 1)
+
+(setq compilation-window-height 12)
+
+;;auto-complete
+(require 'auto-complete)
+(global-auto-complete-mode t)
+(setq ac-auto-start 3)
