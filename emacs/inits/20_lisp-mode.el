@@ -129,11 +129,11 @@
   '(progn (define-key scheme-mode-map "\t" 'scheme-complete-or-indent)))
 (autoload 'scheme-get-current-symbol-info "scheme-complete" t nil)
 (add-hook 'scheme-mode-hook
-(lambda ()
-(make-local-variable 'eldoc-documentation-function)
-(setq eldoc-documentation-function 'scheme-get-current-symbol-info)
-(eldoc-mode t)
-(setq lisp-indent-function 'scheme-smart-indent-function)))
+	  (lambda ()
+	    (make-local-variable 'eldoc-documentation-function)
+	    (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
+	    (eldoc-mode t)
+	    (setq lisp-indent-function 'scheme-smart-indent-function)))
 
 ;; gauche scheme interpreter
 (setq process-coding-system-alist

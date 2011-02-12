@@ -1,4 +1,5 @@
 ;;;; sdic に関する設定
+(add-to-list 'load-path "~/.emacs.d/plugins/sdic/")
 (require 'sdic)
 (autoload 'sdic-describe-word "sdic" "英単語の意味を調べる" t nil)
 (autoload 'sdic-describe-word-at-point "sdic" "カーソル位置の英単語の意味を調べる" t nil)
