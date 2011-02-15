@@ -1,4 +1,5 @@
 ;;haskell-mode
+(add-to-list 'load-path "~/.emacs.d/elisp/haskell-mode/")
 (require 'haskell-mode)
 (setq auto-mode-alist
       (append auto-mode-alist

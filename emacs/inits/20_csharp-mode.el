@@ -1,5 +1,6 @@
 
 ;; C# mode
+(add-to-list 'load-path "~/.emacs.d/elisp/csharp-mode/")
 (require 'csharp-mode)
 (add-hook 'csharp-mode-hook
 	  (lambda ()
