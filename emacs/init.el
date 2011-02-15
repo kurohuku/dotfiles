@@ -88,6 +88,16 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (setq uniquify-ignore-buffers-re "*[^*]+*")
 
+;; bookmark
+(setq bookmark-save-flat 1)
+
+
+;; recentf
+(setq recentf-max-saved-items 500)
+(setq recentf-exclude '("/TAGS$" "/var/tmp/"))
+(require 'recentf-ext)
+
+
 ;;auto-complete
 (require 'auto-complete)
 (global-auto-complete-mode t)
