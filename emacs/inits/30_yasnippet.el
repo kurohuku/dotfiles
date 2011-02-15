@@ -9,4 +9,5 @@
 			     (get-char-property (point) 'face))))
 	   '(require-snippet-condition . force-in-comment)))
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/yasnippet/snippets");;;; anythingの設定
+(yas/load-directory "~/.emacs.d/yasnippet/snippets")
+
