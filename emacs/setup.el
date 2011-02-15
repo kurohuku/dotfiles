@@ -9,13 +9,11 @@
 (require 'auto-install)
 (add-to-list 'load-path "~/.emacs.d/auto-install/")
 (setq auto-install-directory "~/.emacs.d/auto-install/")
-(auto-install-update-emacswiki-package-name t)
+;;(auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
 
-(message "installed: auto-install") 
-
 (auto-install-batch "anything")
-;;(install-elisp-from-emacswiki "vline.el")
+(install-elisp-from-emacswiki "vline.el")
 (install-elisp-from-emacswiki "ring+.el")
 (auto-install-batch "icicles")
 (auto-install-batch "sequential-command")
