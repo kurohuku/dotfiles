@@ -1,7 +1,7 @@
 ;;;; yasnippet に関する設定
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
 (require 'yasnippet)
-(require 'yasnippet-local)
+(require 'yasnippet-config)
 (yas/setup "~/.emacs.d/plugins/yasnippet")
 
 (setq yas/buffer-local-condition
