@@ -75,6 +75,19 @@
 
 (setq compilation-window-height 12)
 
+(global-hl-line-mode t)
+(savehist-mode t)
+(require 'saveplace)
+(setq-default save-place t)
+
+;;(setq gc-cons-threshold 1000000)
+(setq message-log-max 200)
+(setq enable-recursive-minibuffers t)
+(setq history-length 100)
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
 ;;auto-complete
 (require 'auto-complete)
 (global-auto-complete-mode t)
