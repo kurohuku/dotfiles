@@ -11,7 +11,7 @@
 			     (get-char-property (point) 'face))))
 	   '(require-snippet-condition . force-in-comment)))
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/yasnippet/snippets")
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 (global-set-key (kbd "C-x y") 'yas/register-oneshot-snippet)
 (global-set-key (kbd "C-x y") 'yas/register-oneshot-snippet)
