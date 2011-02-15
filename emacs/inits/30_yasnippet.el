@@ -14,4 +14,4 @@
 (yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 (global-set-key (kbd "C-x y") 'yas/register-oneshot-snippet)
-(global-set-key (kbd "C-x y") 'yas/register-oneshot-snippet)
+(global-set-key (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
