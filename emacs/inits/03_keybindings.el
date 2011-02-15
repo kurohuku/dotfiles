@@ -22,3 +22,6 @@
 (define-key mode-specific-map "c" 'compile)
 (define-key mode-specific-map "n" 'next-error)
 
+;; hippie-expand
+;; M-e; forward-sentence -> hippie-expand
+(global-set-key (kbd "M-e") 'hippie-expand) 
