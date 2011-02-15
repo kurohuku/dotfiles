@@ -15,7 +15,7 @@
 (message "installed: auto-install") 
 
 (auto-install-batch "anything")
-(install-elisp-from-emacswiki "vline.el")
+;;(install-elisp-from-emacswiki "vline.el")
 (install-elisp-from-emacswiki "ring+.el")
 (auto-install-batch "icicles")
 (auto-install-batch "sequential-command")
@@ -23,7 +23,7 @@
 (install-elisp "http://coderepos.org/share/export/38845/lang/elisp/init-loader/init-loader.el")
 (install-elisp-from-emacswiki "key-chord.el")
 (install-elisp-from-emacswiki "minor-mode-hack.el")
-(install-elisp-from-emacswiki "recentf.el")
+(install-elisp-from-emacswiki "recentf-ext.el")
 (install-elisp "http://cvs.savannah.gnu.org/viewvc/*checkout*/bm/bm/bm.el")
 (install-elisp-from-emacswiki "redo+.el")
 (install-elisp "http://taiyaki.org/elisp/sense-region/src/sense-region.el")
@@ -33,7 +33,7 @@
 (install-elisp-from-emacswiki "grep-edit.el")
 (auto-install-batch "col-highlight")
 (install-elisp "https://github.com/defunkt/gist.el/raw/master/gist.el")
-(install-elisp "shell-history.el")
+;;(install-elisp "shell-history.el")
 
 (install-elisp "http://taiyaki.org/elisp/mell/src/mell.el")
 (install-elisp "http://taiyaki.org/elisp/text-adjust/src/text-adjust.el")
