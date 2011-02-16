@@ -135,6 +135,8 @@
 	    (eldoc-mode t)
 	    (setq lisp-indent-function 'scheme-smart-indent-function)))
 
+(require 'quack)
+
 ;; gauche scheme interpreter
 (setq process-coding-system-alist
       (cons '("gosh" utf-8 . utf-8) process-coding-system-alist))
