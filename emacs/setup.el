@@ -49,6 +49,9 @@
 (shell-command "mv ~/.emacs.d/tmp/CsharpToolsForEmacs.zip ~/.emacs.d/elisp/csharp-mode/")
 (shell-command "unzip -d ~/.emacs.d/elisp/csharp-mode/ ~/.emacs.d/elisp/csharp-mode/CsharpToolsForEmacs.zip")
 
+;; quack.el (scheme開発環境)
+(install-elisp "http://www.neilvandyke.org/quack/quack.el")
+
 ;; mic-paren.el
 (auto-install-from-emacswiki "mic-paren.el")
 
