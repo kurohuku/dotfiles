@@ -1,5 +1,12 @@
 ;; 指定したディレクトリの el ファイルを読み込む
 (add-to-list 'load-path "~/.emacs.d/auto-install/")
+(add-to-list 'load-path "~/.emacs.d/elisp/")
+(add-to-list 'load-path "~/.emacs.d/auto-install/")
+(add-to-list 'load-path "~/.emacs.d/elisp/csharp-mode/")
+(add-to-list 'load-path "~/.emacs.d/elisp/haskell-mode/")
+(add-to-list 'load-path "~/.emacs.d/plugins/sdic/")
+(add-to-list 'load-path "~/.emacs.d/plugins/sdic/lisp/")
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
