@@ -5,6 +5,7 @@
 (require 'clojure-mode)
 (require 'swank-clojure)
 (require 'scheme-complete)
+(require 'quack)
 
 ;;;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook
@@ -24,7 +25,7 @@
 (setq inferior-lisp-program "sbcl")
 
 (setq slime-backend
-      (expand-file-name "swank-loader.lisp"))
+      (expand-file-name "~/.emacs.d/elisp/slime/swank-loader.lisp"))
 
 (setq slime-truncate-lines nil)
 
@@ -75,7 +76,7 @@
 	 ("lx86cl64")
 	 :coding-system utf-8-unix)
 	(sbcl
-	 ("sbcl" "--core" "sbcl.core")
+	 ("sbcl" "--core" ,(expand-file-name "~/.emacs.d/core/sbcl.core"))
          :coding-system utf-8-unix)
 	(clojure
 	 ,(swank-clojure-cmd) :init swank-clojure-init)))

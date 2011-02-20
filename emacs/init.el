@@ -7,6 +7,10 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/sdic/")
 (add-to-list 'load-path "~/.emacs.d/plugins/sdic/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
+(add-to-list 'load-path "~/.emacs.d/elisp/slime/")
+(add-to-list 'load-path "~/.emacs.d/elisp/slime/contrib/")
+(add-to-list 'load-path "~/.emacs.d/elisp/clojure-mode/")
+(add-to-list 'load-path "~/.emacs.d/elisp/swank-clojure/")
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")

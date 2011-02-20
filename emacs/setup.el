@@ -52,8 +52,31 @@
 ;; quack.el (scheme開発環境)
 (install-elisp "http://www.neilvandyke.org/quack/quack.el")
 
+;; scheme-complete
+(shell-command "wget -P ~/.emacs.d/tmp/ http://synthcode.com/emacs/scheme-complete.el.gz")
+(shell-command "gzip -d ~/.emacs.d/tmp/scheme-complete.el.gz")
+(shell-command "mv ~/.emacs.d/tmp/scheme-complete.el ~/.emacs.d/elisp/scheme-complete.el")
+
+
 ;; mic-paren.el
 (auto-install-from-emacswiki "mic-paren.el")
+
+;; clojure-mode
+(install-elisp-from-emacswiki "clojure-mode.el")
+
+;; swank-clojure
+(shell-command "wget --no-check-certificate -P ~/.emacs.d/tmp/ https://github.com/jochu/swank-clojure/tarball/master")
+(shell-command "mv ~/.emacs.d/tmp/master ~/.emacs.d/elisp/swank-clojure.tar.gz")
+(shell-command "tar zxvf ~/.emacs.d/elisp/swank-clojure.tar.gz -C ~/.emacs.d/elisp/")
+(shell-command "mv ~/.emacs.d/elisp/jochu-swank-clojure-f96e9f0/ ~/.emacs.d/elisp/swank-clojure")
+
+;; slime
+(shell-command "wget -P ~/.emacs.d/tmp/ http://common-lisp.net/project/slime/snapshots/slime-current.tgz")
+(shell-command "tar zxvf ~/.emacs.d/tmp/slime-current.tgz -C ~/.emacs.d/tmp/" )
+(shell-command "mv ~/.emacs.d/tmp/slime-2011-02-19/ ~/.emacs.d/elisp/slime")
+
+;; quack.el
+(install-elisp " http://www.neilvandyke.org/quack/quack.el")
 
 ;;;; plugins
 (unless (file-directory-p "~/.emacs.d/plugins/")
