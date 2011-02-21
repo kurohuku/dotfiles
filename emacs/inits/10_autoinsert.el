@@ -24,7 +24,7 @@
   `(("%file%" . (lambda () (file-name-nondirectory (buffer-file-name))))
     ("%directory%" . (lambda () (file-name-directory (buffer-file-name))))
     ("%absolute-file%" . (lambda () (buffer-file-name)))
-    ("%relative-file%" . (lambda (file-relative-name (buffer-file-name))))
+    ("%relative-file%" . (lambda () (file-relative-name (buffer-file-name))))
     ("%relative-directory%" . (lambda ()
 				(file-name-directory
 				 (file-relative-name (buffer-file-name)))))

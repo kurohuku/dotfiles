@@ -57,7 +57,15 @@
 (shell-command "gzip -d ~/.emacs.d/tmp/scheme-complete.el.gz")
 (shell-command "mv ~/.emacs.d/tmp/scheme-complete.el ~/.emacs.d/elisp/scheme-complete.el")
 
+;; googleecl
+(shell-command "wget -P ~/.emacs.d/tmp/ http://googlecl.googlecode.com/files/googlecl-0.9.12.tar.gz")
+(shell-command "tar zxvf ~/.emacs.d/tmp/googlecl-0.9.12/ -C ~/.emacs.d/tmp/")
+(shell-command "mv ~/.emacs.d/tmp/googlecl-0.9.12/ ~/.emacs.d/elisp/googlecl")
 
+(shell-command "wget --no-check-certificate -P ~/.emacs.d/tmp/ https://github.com/rileyrg/org-googlecl/tarball/master")
+(shell-command "mv ~/.emacs.d/tmp/master ~/.emacs.d/tmp/org-googlecl.tgz")
+(shell-command "tar zxvf ~/.emacs.d/tmp/org-googlecl.tgz -C ~/.emacs.d/tmp/")
+(shell-command "mv ~/.emacs.d/tmp/rileyrg-org-googlecl-0be93e1 ~/.emacs.d/elisp/org-googlecl")
 ;; mic-paren.el
 (auto-install-from-emacswiki "mic-paren.el")
 

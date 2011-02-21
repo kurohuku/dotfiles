@@ -11,6 +11,8 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/slime/contrib/")
 (add-to-list 'load-path "~/.emacs.d/elisp/clojure-mode/")
 (add-to-list 'load-path "~/.emacs.d/elisp/swank-clojure/")
+(add-to-list 'load-path "~/.emacs.d/elisp/googlecl/")
+(add-to-list 'load-path "~/.emacs.d/elisp/org-googlecl/")
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
