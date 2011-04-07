@@ -57,6 +57,7 @@
 (shell-command "gzip -d ~/.emacs.d/tmp/scheme-complete.el.gz")
 (shell-command "mv ~/.emacs.d/tmp/scheme-complete.el ~/.emacs.d/elisp/scheme-complete.el")
 
+
 ;; googleecl
 (shell-command "wget -P ~/.emacs.d/tmp/ http://googlecl.googlecode.com/files/googlecl-0.9.12.tar.gz")
 (shell-command "tar zxvf ~/.emacs.d/tmp/googlecl-0.9.12/ -C ~/.emacs.d/tmp/")
@@ -82,6 +83,9 @@
 (shell-command "wget -P ~/.emacs.d/tmp/ http://common-lisp.net/project/slime/snapshots/slime-current.tgz")
 (shell-command "tar zxvf ~/.emacs.d/tmp/slime-current.tgz -C ~/.emacs.d/tmp/" )
 (shell-command "mv ~/.emacs.d/tmp/slime-2011-02-19/ ~/.emacs.d/elisp/slime")
+
+;; ac-slime
+(install-elisp "https://github.com/purcell/ac-slime/raw/master/ac-slime.el")
 
 ;; quack.el
 (install-elisp " http://www.neilvandyke.org/quack/quack.el")

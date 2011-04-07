@@ -6,6 +6,7 @@
 (require 'swank-clojure)
 (require 'scheme-complete)
 (require 'quack)
+(require 'ac-slime)
 
 ;;;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook
@@ -86,7 +87,10 @@
           (lambda ()
 	    (if (eq major-mode 'clojure-mode)
 		'nothing-to-do
-	      (setq lisp-indent-function 'common-lisp-indent-function))))
+	      (setq lisp-indent-function 'common-lisp-indent-function)))
+	  'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+
 ;; Additional definitions by Pierpaolo Bernardi.
 (defun cl-indent (sym indent)
   (put sym 'common-lisp-indent-function

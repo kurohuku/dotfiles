@@ -88,7 +88,7 @@
 
 (setq compilation-window-height 12)
 
-(global-hl-line-mode t)
+;;(global-hl-line-mode t)
 (savehist-mode t)
 (require 'saveplace)
 (setq-default save-place t)
