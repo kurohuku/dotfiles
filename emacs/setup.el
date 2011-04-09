@@ -43,11 +43,17 @@
 ;; haskell-mode
 ;;(shell-command "darcs get http://code.haskell.org/haskellmode-emacs/ --repodir ~/.emacs.d/elisp/haskell-mode/")
 
-;; CSharpMode
+;; csharp-mode
 (shell-command "wget -P ~/.emacs.d/tmp/ http://csharpmode.googlecode.com/files/CsharpToolsForEmacs.zip")
 (shell-command "mkdir ~/.emacs.d/elisp/csharp-mode")
 (shell-command "mv ~/.emacs.d/tmp/CsharpToolsForEmacs.zip ~/.emacs.d/elisp/csharp-mode/")
 (shell-command "unzip -d ~/.emacs.d/elisp/csharp-mode/ ~/.emacs.d/elisp/csharp-mode/CsharpToolsForEmacs.zip")
+
+;; fsharp-mode
+(shell-command "wget -P ~/.emacs.d/tmp/ http://downloads.sourceforge.net/project/fsharp-mode/fsharp-mode/beta%200.3/fsharp-0.3.zip")
+(shell-command "mkdir ~/.emacs.d/elisp/fsharp-mode")
+(shell-command "mv ~/.emacs.d/tmp/fsharp-0.3.zip ~/.emacs.d/elisp/fsharp-mode/")
+(shell-command "unzip -d ~/.emacs.d/elisp/fsharp-mode/ ~/.emacs.d/elisp/fsharp-mode/fsharp-0.3.zip")
 
 ;; quack.el (scheme開発環境)
 (install-elisp "http://www.neilvandyke.org/quack/quack.el")

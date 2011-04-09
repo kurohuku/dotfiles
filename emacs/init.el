@@ -13,6 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/swank-clojure/")
 (add-to-list 'load-path "~/.emacs.d/elisp/googlecl/")
 (add-to-list 'load-path "~/.emacs.d/elisp/org-googlecl/")
+(add-to-list 'load-path "~/.emacs.d/elisp/fsharp-mode/fsharp/")
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
