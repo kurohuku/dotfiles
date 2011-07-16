@@ -57,8 +57,8 @@
 
 (add-hook 'lisp-mode-hook (lambda ()
                             (slime-mode t)
-                            (show-paren-mode t)
-                            (global-set-key "\C-cH" 'hyperspec-lookup)))
+                            (show-paren-mode t)))
+
 
 ;;slimeで日本語を使うための設定．Lisp側の対応も必要
 (setq slime-net-coding-system 'utf-8-unix)
@@ -89,6 +89,7 @@
 		'nothing-to-do
 	      (setq lisp-indent-function 'common-lisp-indent-function)))
 	  'set-up-slime-ac)
+
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 
 ;; Additional definitions by Pierpaolo Bernardi.
@@ -112,6 +113,7 @@
               (expand-file-name "~/.emacs.d/HyperSpec/"))
       common-lisp-hyperspec-symbol-table
       (expand-file-name "~/.emacs.d/HyperSpec/Data/MapSym.txt"))
+
 ;; HyperSpecをw3mで見る
 (defadvice common-lisp-hyperspec
   (around hyperspec-lookup-w3m () activate)
@@ -155,9 +157,6 @@
   (switch-to-buffer-other-window
    (get-buffer-create "*scheme*"))
   (run-scheme scheme-program-name))
-(define-key global-map
-  "\C-cS" 'scheme-other-window)
-
 
 ;; indent style for gauche
 (put 'and-let* 'scheme-indent-function 1)

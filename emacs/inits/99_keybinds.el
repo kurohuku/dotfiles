@@ -15,8 +15,6 @@
   (kbd "C-h") 'delete-backward-char
   (kbd "C-t") 'other-window
   (kbd "C-o") 'hippie-expand
-  (kbd "C-c w") 'sdic-describe-word
-  (kbd "C-c W") 'sdic-describe-word-at-point
   )
 
 ;; mode-specific (C-c `key')
@@ -26,6 +24,9 @@
     (kbd "w") 'sdic-describe-word
     (kbd "W") 'sdic-describe-word-at-point
     (kbd "H") 'hyperspec-lookup
+    (kbd "l") 'org-store-link
+    (kbd "a") 'org-agenda
+    (kbd "S") 'scheme-other-window
     )
 
 ;; lisp

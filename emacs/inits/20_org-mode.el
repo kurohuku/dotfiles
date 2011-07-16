@@ -7,9 +7,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
-(define-key global-map (kbd "C-c l") 'org-store-link)
-(define-key global-map (kbd "C-c a") 'org-agenda)
-
 (setq org-directory "~/orgdir/")
 (setq org-default-notes-file (concat org-directory "memo.org"))
 (setq org-return-follows-link t)

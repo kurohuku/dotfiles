@@ -27,3 +27,5 @@
   (set-mode-specified-try-functions
    mode
    '(try-complete-slime-symbol)))
+
+(enable-mode-specified-hippie-expand)

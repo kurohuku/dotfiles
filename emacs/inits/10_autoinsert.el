@@ -28,7 +28,8 @@
     ("%relative-directory%" . (lambda ()
 				(file-name-directory
 				 (file-relative-name (buffer-file-name)))))
-    ("%input%" . (lambda () (read-from-minibuffer "autoinsert input:")))
+    ("%input%" . (lambda () (if (search "%input%" (buffer-string))
+				(read-from-minibuffer "autoinsert input:"))))
     ("%class-name%" . (lambda ()
 			(car
 			 (split-string
@@ -46,7 +47,9 @@
   (mapc #'(lambda (c)
 	    (progn
 	      (goto-char (point-min))
-	      (replace-string (car c) (funcall (cdr c)) nil)))
+	      (let ((tmp (funcall (cdr c))))
+		(when tmp
+		  (replace-string (car c) tmp nil)))))
 	autoinsert-template-replacements-alists)
   (goto-char (point-max))
   (message "done."))

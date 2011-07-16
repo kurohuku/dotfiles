@@ -9,6 +9,3 @@
                     (string= "font-lock-string-face"
                              (get-char-property (point) 'face))))
            '(require-snippet-condition . force-in-comment)))
-
-(global-set-key (kbd "C-x y") 'yas/register-oneshot-snippet)
-(global-set-key (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
