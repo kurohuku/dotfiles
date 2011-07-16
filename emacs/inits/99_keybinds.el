@@ -1,7 +1,3 @@
-;;;; sequential-command.el
-;;(require 'sequential-command-config)
-;;(sequential-command-setup-keys)
-
 (defmacro define-keys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)
           (loop for rest on clauses by 'cddr
@@ -58,3 +54,4 @@
     (kbd "C-x y") 'yas/register-oneshot-snippet
     (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
 (setq yas/trigger-key "TAB")
+
