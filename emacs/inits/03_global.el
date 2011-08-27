@@ -1,6 +1,11 @@
+;;;; Last Updated : 2011/08/28 02:48
+(require 'saveplace)
+(require 'uniquify)
+(require 'recentf-ext)
+(require 'auto-complete)
 
 ;;; proxy
-;;(setq url-proxy-services '(("http" . "127.0.0.1:8080")))
+(setq url-proxy-services *path:url-proxy-services*)
 
 ;;; default coding system
 (set-default-coding-systems 'utf-8)
@@ -34,7 +39,6 @@
 
 ;; show paren
 (show-paren-mode)
-
 
 (icomplete-mode 1)
 

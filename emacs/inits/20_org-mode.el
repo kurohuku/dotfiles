@@ -1,14 +1,14 @@
+;;;; Last Updated : 2011/08/28 02:42
+
 (require 'org-install)
-(require 'org-googlecl)
 (require 'org)
 (org-remember-insinuate)
 
-(load "~/.blogger-name.el")
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
-(setq org-directory "~/orgdir/")
-(setq org-default-notes-file (concat org-directory "memo.org"))
+(setq org-directory *path:org-directory*)
+(setq org-default-notes-file (concat org-directory *path:org-default-notes-file*))
 (setq org-return-follows-link t)
 
 (setq org-remember-templates

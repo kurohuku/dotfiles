@@ -1,11 +1,12 @@
 ;;;; lisp系のモードに関する設定
 ;;;; CL,Scheme,Clojure,slime,HyperSpecを含む
+;;;; Last Updated : 2011/08/28 02:40
 
 (require 'slime)
 (require 'clojure-mode)
-(require 'swank-clojure)
-(require 'scheme-complete)
-(require 'quack)
+;; (require 'swank-clojure)
+;;(require 'scheme-complete)
+;(require 'quack)
 (require 'ac-slime)
 
 ;;;; emacs lisp
@@ -15,18 +16,18 @@
 
 ;; common lisp, clojure
 
-(setq swank-clojure-classpath
-      '("clojure.jar"
-	"src"
-	"classes"
-	"/usr/java/sdk/javadb/lib/derby.jar"
-	"swank-clojure/src"
-	"clojure-contrib-1.2.0-SNAPSHOT.jar"))
+;; (setq swank-clojure-classpath
+;;       '("clojure.jar"
+;; 	"src"
+;; 	"classes"
+;; 	"/usr/java/sdk/javadb/lib/derby.jar"
+;; 	"swank-clojure/src"
+;;	"clojure-contrib-1.2.0-SNAPSHOT.jar"))
 
 (setq inferior-lisp-program "sbcl")
 
 (setq slime-backend
-      (expand-file-name "~/.emacs.d/elisp/slime/swank-loader.lisp"))
+      (expand-file-name *path:slime-backend*))
 
 (setq slime-truncate-lines nil)
 
@@ -65,22 +66,28 @@
 
 (setq slime-lisp-implementations
       `((clisp
-	 ("clisp"
-	  "-M" "clisp.core")
-	 :init (lambda (port-file _)
-		 (format "(progn (setf swank::*coding-system* \"utf-8-unix\") (swank:start-server %S))\n" port-file))
+	 ,(if *path:lisp-clisp-core*
+	      `(,*path:lisp-clisp-bin* "-M" *path:lisp-clisp-core*)
+	    `(,*path:lisp-clisp-bin*))
 	 :coding-system utf-8-unix)
 	(ccl32
-	 ("lx86cl")
+	 ,(if *path:lisp-ccl32-core*
+	      `(,*path:lisp-ccl32-bin* "--image-file" ,*path-ccl32-core*)
+	    `(,*path:lisp-ccl32-bin*))
 	 :coding-system utf-8-unix)
 	(ccl64
-	 ("lx86cl64")
+	 ,(if *path:lisp-ccl64-core*
+	      `(,*path:lisp-ccl64-bin* "--image-file" ,*path-ccl64-core*)
+	    `(,*path:lisp-ccl64-bin*))
 	 :coding-system utf-8-unix)
 	(sbcl
-	 ("sbcl" "--core" ,(expand-file-name "~/.emacs.d/core/sbcl.core"))
+	 ,(if *path:lisp-sbcl-core*
+	      `(,*path:lisp-sbcl-bin* "--core" ,(expand-file-name *path:lisp-sbcl-core*))
+	    `(,*path:lisp-sbcl-bin*))
          :coding-system utf-8-unix)
-	(clojure
-	 ,(swank-clojure-cmd) :init swank-clojure-init)))
+;;	(clojure
+;;	 ,(swank-clojure-cmd) :init swank-clojure-init)))
+	))
 
 ;;;slimeのインデントを変更
 (add-hook 'slime-mode-hook
@@ -110,9 +117,9 @@
 (require 'hyperspec)
 (setq common-lisp-hyperspec-root
       (concat "file://"
-              (expand-file-name "~/.emacs.d/HyperSpec/"))
+              (expand-file-name *path:hyperspec-root*))
       common-lisp-hyperspec-symbol-table
-      (expand-file-name "~/.emacs.d/HyperSpec/Data/MapSym.txt"))
+      (expand-file-name *path:hyperspec-symbol-table*))
 
 ;; HyperSpecをw3mで見る
 (defadvice common-lisp-hyperspec
@@ -132,17 +139,15 @@
 
 (add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
 
-(eval-after-load 'scheme
-  '(progn (define-key scheme-mode-map "\t" 'scheme-complete-or-indent)))
-(autoload 'scheme-get-current-symbol-info "scheme-complete" t nil)
-(add-hook 'scheme-mode-hook
-	  (lambda ()
-	    (make-local-variable 'eldoc-documentation-function)
-	    (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
-	    (eldoc-mode t)
-	    (setq lisp-indent-function 'scheme-smart-indent-function)))
-
-(require 'quack)
+;; (eval-after-load 'scheme
+;;   '(progn (define-key scheme-mode-map "\t" 'scheme-complete-or-indent)))
+;; (autoload 'scheme-get-current-symbol-info "scheme-complete" t nil)
+;; (add-hook 'scheme-mode-hook
+;; 	  (lambda ()
+;; 	    (make-local-variable 'eldoc-documentation-function)
+;; 	    (setq eldoc-documentation-function 'scheme-get-current-symbol-info)
+;; 	    (eldoc-mode t)
+;; 	    (setq lisp-indent-function 'scheme-smart-indent-function)))
 
 ;; gauche scheme interpreter
 (setq process-coding-system-alist

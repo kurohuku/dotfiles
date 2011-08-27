@@ -1,8 +1,9 @@
 ;;;; autoinsert に関する設定
+;;;; Last Updated : 2011/08/28 02:48
 
 (require 'autoinsert)
 
-(setq auto-insert-directory "~/.emacs.d/autoinsert/")
+(setq auto-insert-directory *path:auto-insert-directory*)
 
 (setq auto-insert-alist
       `(("\\.hpp$" . ["autoinsert-template.hpp" autoinsert-my-template])

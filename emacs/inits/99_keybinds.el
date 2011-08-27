@@ -1,3 +1,5 @@
+;;;; Last Updated : 2011/08/28 02:46
+
 (defmacro define-keys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)
           (loop for rest on clauses by 'cddr

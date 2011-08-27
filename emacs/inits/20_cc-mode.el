@@ -1,4 +1,5 @@
 ;;;; C系言語のモードに対する設定
+;;;; Last Updated : 2011/08/28 02:25
 
 ;;;; c/c++ indent
 ;;(setf c-auto-newline t)

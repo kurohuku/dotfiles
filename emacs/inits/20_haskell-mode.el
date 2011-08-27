@@ -1,4 +1,5 @@
-;;haskell-mode
+;; haskell-mode
+;; Last Updated : 2011/08/28 02:29
 
 (require 'haskell-mode)
 (setq auto-mode-alist
@@ -16,4 +17,4 @@
 (add-hook 'haskell-mode-hook 'font-lock-mode)
 (add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-ghc)
-(setq haskell-program-name "/usr/bin/ghci")
+(setq haskell-program-name *path:haskell-program-name*)

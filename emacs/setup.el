@@ -88,7 +88,7 @@
 ;; slime
 (shell-command "wget -P ~/.emacs.d/tmp/ http://common-lisp.net/project/slime/snapshots/slime-current.tgz")
 (shell-command "tar zxvf ~/.emacs.d/tmp/slime-current.tgz -C ~/.emacs.d/tmp/" )
-(shell-command "mv ~/.emacs.d/tmp/slime-2011-02-19/ ~/.emacs.d/elisp/slime")
+(shell-command "mv ~/.emacs.d/tmp/slime-2011-08-13/ ~/.emacs.d/elisp/slime")
 
 ;; ac-slime
 (install-elisp "https://github.com/purcell/ac-slime/raw/master/ac-slime.el")
@@ -122,12 +122,14 @@
 (shell-command "cd ~/.emacs.d/plugins/sdic/ && ./configure && make && make dict")
 
 
+(shell-command "wget -P ~/.emacs.d/plugins/ http://repo.or.cz/w/emacs.git/blob_plain/1a0a666f941c99882093d7bd08ced15033bc3f0c:/lisp/emacs-lisp/package.el")
+
+(setf package-archives
+      '(("ELPA" . "http://tromey.com/elpa/")
+	("gnu" . "http://elpa.gnu.org/packages/")
+	("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq package-user-dir (concat user-emacs-directory "plugins/elpa"))
 
 
-
-
-
-
-
-
+;; M-x package-list-packages
 

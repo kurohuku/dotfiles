@@ -1,3 +1,5 @@
+;;;; Last Updated : 2011/08/28 02:46
+
 (require 'mode-specified-hippie-expand)
 (require 'try-complete-slime-symbol)
 

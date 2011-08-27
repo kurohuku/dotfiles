@@ -1,4 +1,6 @@
 ;;;; mic-paren.el
+;;;; Last Updated : 2011/08/28 02:42
+
 (require 'mic-paren)
 
 (paren-activate)

@@ -4,6 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/auto-install/")
 (add-to-list 'load-path "~/.emacs.d/elisp/csharp-mode/")
 (add-to-list 'load-path "~/.emacs.d/elisp/haskell-mode/")
+(add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'load-path "~/.emacs.d/plugins/sdic/")
 (add-to-list 'load-path "~/.emacs.d/plugins/sdic/lisp/")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
@@ -14,11 +15,17 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/googlecl/")
 (add-to-list 'load-path "~/.emacs.d/elisp/org-googlecl/")
 (add-to-list 'load-path "~/.emacs.d/elisp/fsharp-mode/fsharp/")
+(add-to-list 'load-path "~/.emacs.d/elisp/hippie-expand-utility/")
+
 
 (require 'cl)
-(require 'saveplace)
 (require 'init-loader)
-(require 'uniquify)
-(require 'recentf-ext)
-(require 'auto-complete)
+
+(require 'package)
+(setf package-archives
+      '(("ELPA" . "http://tromey.com/elpa/")
+	("gnu" . "http://elpa.gnu.org/packages/")
+	("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq package-user-dir (concat user-emacs-directory "plugins/elpa"))
+
 (init-loader-load "~/.emacs.d/inits")

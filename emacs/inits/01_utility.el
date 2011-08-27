@@ -1,4 +1,5 @@
 ;;;; utility.el
+;;;; Last Updated : 2011/08/28 02:47
 ;;;; ユーティリティ関数とコマンド
 
 (defun kill-to-regexp-forward (regexp)
