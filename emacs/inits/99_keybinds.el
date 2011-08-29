@@ -1,4 +1,4 @@
-;;;; Last Updated : 2011/08/28 02:46
+;;;; Last Updated : 2011/08/30 00:58
 
 (defmacro define-keys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)
@@ -15,8 +15,12 @@
   (kbd "M-?") 'help
   (kbd "M-0") 'anything
   (kbd "C-h") 'delete-backward-char
-  (kbd "C-t") 'other-window
-  (kbd "C-o") 'hippie-expand
+  (kbd "C-t") 'other-window-or-split
+  (kbd "C-o") 'my-ctrl-o
+  (kbd "C-a") 'move-beginning-of-line+scroll-down
+  (kbd "C-e") 'move-end-of-line+scroll-up
+  (kbd "M-<Return>") 'newline
+  (kbd "<Return>") 'newline-and-indent
   )
 
 ;; mode-specific (C-c `key')
@@ -43,7 +47,10 @@
     (kbd "(") 'insert-parentheses
     (kbd "M-(") (lambda () (interactive) (insert "("))
     (kbd ")") 'move-past-close-and-reindent
-    (kbd "M-)") (lambda () (interactive) (insert ")")))
+    (kbd "M-)") (lambda () (interactive) (insert ")"))
+    (kbd "C-c C-l") 'load-file)
+
+
     
 ;; lisp-interaction (emacs-lisp)
 (define-keys lisp-interaction-mode-map

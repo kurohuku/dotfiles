@@ -1,5 +1,5 @@
 ;;;; path.el
-;;;; Last Updated : 2011/08/28 02:45
+;;;; Last Updated : 2011/08/28 03:12
 ;;;; パスの設定
 
 
@@ -41,6 +41,10 @@
 
 ;; Haskell
 (defvar *path:haskell-program-name* "/usr/bin/ghci")
+
+;; Erlang
+(defvar *path:erlang-root-dir* "/usr/lib/erlang")
+(defvar *path:erlang-bin-dir* "/usr/lib/erlang/bin")
 
 ;; Org-mode
 (defvar *path:org-directory* "~/orgdir/")

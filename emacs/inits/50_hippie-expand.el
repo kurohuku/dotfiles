@@ -1,4 +1,4 @@
-;;;; Last Updated : 2011/08/28 02:46
+;;;; Last Updated : 2011/08/29 23:41
 
 (require 'mode-specified-hippie-expand)
 (require 'try-complete-slime-symbol)
@@ -22,12 +22,16 @@
    mode
    '(try-expand-dabbrev
      try-complete-lisp-symbol-partially
-     try-complete-lisp-symbol)))
+     try-complete-lisp-symbol
+     try-complete-file-name-partially
+     try-expand-dabbrev-all-buffers)))
 
 ;; slime用
 (dolist (mode '(slime-mode slime-repl-mode))
   (set-mode-specified-try-functions
    mode
-   '(try-complete-slime-symbol)))
+   '(try-complete-slime-symbol
+     try-complete-file-name-partially
+     try-expand-dabbrev-all-buffers)))
 
 (enable-mode-specified-hippie-expand)
