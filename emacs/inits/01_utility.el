@@ -1,5 +1,5 @@
 ;;;; utility.el
-;;;; Last Updated : 2011/08/30 00:59
+;;;; Last Updated : 2011/08/30 23:20
 ;;;; ユーティリティ関数 コマンド
 
 (defmacro call-as-this-command (cmd &rest args)
@@ -87,6 +87,8 @@
   (cond
    (mark-active (call-as-this-command indent-region))
    ((at-word?) (call-as-this-command forward-word))
+   ((at-end-of-symbol?) (call-as-this-command hippie-expand))
    ((at-paren-start?) (call-as-this-command forward-char))
    ((at-paren-end?) (call-as-this-command forward-char))
    (t (call-as-this-command hippie-expand))))
+

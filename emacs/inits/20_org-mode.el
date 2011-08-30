@@ -1,4 +1,4 @@
-;;;; Last Updated : 2011/08/28 02:42
+;;;; Last Updated : 2011/08/30 23:25
 
 (require 'org-install)
 (require 'org)
@@ -21,3 +21,26 @@
 	(sequence "APPT(a)" "|" "DONE(x)" "CANCEL(c)")))
 
 
+(setq org-tag-alist
+      `(("Tips" . nil)
+	;; Programming Language
+	("C" . nil)
+	("C++" . nil)
+	("CommonLisp" . nil)
+	("Scheme" . nil)
+	("FSharp" . nil)
+	("PowerShell" . nil)
+	("Erlang" . nil)
+	;; Programming Language Implementation
+	("SBCL" . nil)
+	("CCL" . nil)
+	("CLISP" . nil)
+	("Shell" . nil)
+	;; Programming
+	("GUI" . nil)
+	("OOP" . nil)
+	("Web" . nil)
+	("Network" . nil)
+	("Library" . nil)
+	("DB" . nil)
+	))

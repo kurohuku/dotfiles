@@ -1,4 +1,4 @@
-;;;; Last Updated : 2011/08/30 00:58
+;;;; Last Updated : 2011/08/30 23:38
 
 (defmacro define-keys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)
@@ -65,3 +65,12 @@
     (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
 (setq yas/trigger-key "TAB")
 
+;; auto-complete
+(define-keys ac-completing-map
+  (kbd "C-n") 'ac-next
+  (kbd "C-p") 'ac-previous)
+
+
+
+
+  
