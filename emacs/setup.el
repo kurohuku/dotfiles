@@ -69,6 +69,7 @@
 (shell-command "tar zxvf ~/.emacs.d/tmp/googlecl-0.9.12/ -C ~/.emacs.d/tmp/")
 (shell-command "mv ~/.emacs.d/tmp/googlecl-0.9.12/ ~/.emacs.d/elisp/googlecl")
 
+(install-elisp "https://raw.github.com/rileyrg/org-googlecl/master/org-googlecl.el")
 (shell-command "wget --no-check-certificate -P ~/.emacs.d/tmp/ https://github.com/rileyrg/org-googlecl/tarball/master")
 (shell-command "mv ~/.emacs.d/tmp/master ~/.emacs.d/tmp/org-googlecl.tgz")
 (shell-command "tar zxvf ~/.emacs.d/tmp/org-googlecl.tgz -C ~/.emacs.d/tmp/")
@@ -128,7 +129,7 @@
       '(("ELPA" . "http://tromey.com/elpa/")
 	("gnu" . "http://elpa.gnu.org/packages/")
 	("marmalade" . "http://marmalade-repo.org/packages/")))
-(setq package-user-dir (concat user-emacs-directory "plugins/elpa"))
+(setq package-user-dir (concat user-emacs-directory "elpa"))
 
 
 ;; M-x package-list-packages
