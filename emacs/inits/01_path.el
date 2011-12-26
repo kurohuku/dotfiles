@@ -1,5 +1,5 @@
 ;;;; path.el
-;;;; Last Updated : 2011/08/28 03:12
+;;;; Last Updated : 2011/11/05 00:31
 ;;;; パスの設定
 
 
@@ -20,8 +20,8 @@
 
 ;; Common Lisp
 (defvar *path:lisp-sbcl-bin* "sbcl")
-(defvar *path:lisp-ccl32-bin* "~/bin/ccl/lx86cl")
-(defvar *path:lisp-ccl64-bin* "~/bin/ccl/lx86cl64")
+(defvar *path:lisp-ccl32-bin* "~/bin/lx86cl")
+(defvar *path:lisp-ccl64-bin* "~/bin/lx86cl64")
 (defvar *path:lisp-clisp-bin* "")
 (defvar *path:lisp-clisp-core* "")
 (defvar *path:lisp-ccl32-core* nil)

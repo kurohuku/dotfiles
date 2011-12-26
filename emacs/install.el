@@ -9,6 +9,8 @@
 (setq auto-install-directory "~/.emacs.d/auto-install/")
 ;;(auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
+
+(auto-install-batch "anything")
 (install-elisp-from-emacswiki "vline.el")
 (install-elisp-from-emacswiki "ring+.el")
 (install-elisp-from-emacswiki "key-chord.el")
@@ -45,11 +47,11 @@
 	("gnu" . "http://elpa.gnu.org/packages/")
 	("marmalade" . "http://marmalade-repo.org/packages/")))
 
-
+(package-list-packages)
 (package-install 'bookmark+)
 (package-install 'bm)
 (package-install 'yasnippet)
-(package-install 'anything)
+
 (package-install 'ac-slime)
 (package-install 'c-eldoc)
 (package-install 'caml)
@@ -58,10 +60,11 @@
 (package-install 'csharp-mode)
 (package-install 'd-mode)
 (condition-case nil
-    (requier 'ert)
+    (require 'ert)
   (error (package-install 'ert)))
 (package-install 'js2-mode)
 (package-install 'marmalade)
+(package-install 'furl)
 (package-install 'mic-paren)
 (package-install 'nav)
 (package-install 'org)
@@ -69,3 +72,8 @@
 (package-install 'slime)
 (package-install 'slime-clj)
 (package-install 'undo-tree)
+
+
+(install-elisp-from-emacswiki "yasnippet-config.el")
+;; other
+;;w3m

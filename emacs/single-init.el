@@ -63,7 +63,7 @@
 (setq package-user-dir (elisp-dir "package"))
 
 ;;; auto-install
-(require 'auto-install
+(require 'auto-install)
 (setq auto-install-directory (elisp-dir "auto-install"))
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
@@ -106,7 +106,9 @@
 (setq time-stamp-start "Last Updated : ")
 
 ;; w3m
-(require 'w3m)
+(condition-case nil
+    (require 'w3m)
+  (error nil))
 
 ;; c-mode
 ;; (setf c-auto-newline t)
@@ -127,10 +129,10 @@
     (progn
       (require 'csharp-mode)
       (add-hook 'csharp-mode-hook
-	  (lambda ()
-	    (setq c-basic-offset 4
-		  tab-width 4
-		  indent-tabs-mode nil)))
+		(lambda ()
+		  (setq c-basic-offset 4
+			tab-width 4
+			indent-tabs-mode nil)))
       (autoload 'csharp-mode "csharp-mode" "C# editing mode." t)
       (nconc auto-mode-alist '(("\\.cs$" . csharp-mode))))
   (error nil))
@@ -221,8 +223,8 @@
 (defun cl-indent (sym indent)
   (put sym 'common-lisp-indent-function
        (if (symbolp indent)
-           (get indent 'common-lisp-indent-function)
-         indent)))
+	   (get indent 'common-lisp-indent-function)
+	 indent)))
 (cl-indent 'if '1)
 (cl-indent 'generic-flet 'flet)
 (cl-indent 'generic-labels 'labels)
@@ -300,15 +302,16 @@
 
 ;; yasnippet
 (setq yas/trigger-key "TAB")
-(require 'yasnippet-config)
-(yas/setup (elisp-dir "yasnippet"))
+;;(require 'yasnippet-config)
+(require 'yasnippet)
+(yas/setup (elisp-dir "package/yasnippet-0.6.1/"))
 
 (setq yas/buffer-local-condition
       '(or (not (or (string= "font-lock-comment-face"
-                             (get-char-property (point) 'face))
-                    (string= "font-lock-string-face"
-                             (get-char-property (point) 'face))))
-           '(require-snippet-condition . force-in-comment)))
+			     (get-char-property (point) 'face))
+		    (string= "font-lock-string-face"
+			     (get-char-property (point) 'face))))
+	   '(require-snippet-condition . force-in-comment)))
 
 ;; anything
 (require 'anything-startup)
@@ -317,13 +320,13 @@
 ;; keybindings
 (defmacro define-keys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)
-          (loop for rest on clauses by 'cddr
-                collect (subseq rest 0 2))))
+	  (loop for rest on clauses by 'cddr
+		collect (subseq rest 0 2))))
     `(progn
        ,@(mapcar
-          (lambda (def)
-            `(define-key ,map ,(car def) ,(cadr def)))
-          definitions))))
+	  (lambda (def)
+	    `(define-key ,map ,(car def) ,(cadr def)))
+	  definitions))))
 
 ;; global
 (define-keys global-map
@@ -340,23 +343,23 @@
 
 ;; mode-specific (C-c `key')
 (define-keys mode-specific-map
-    (kbd "c") 'compile
-    (kbd "n") 'next-error
-    (kbd "w") 'sdic-describe-word
-    (kbd "W") 'sdic-describe-word-at-point
-    (kbd "l") 'org-store-link
-    (kbd "a") 'org-agenda)
+  (kbd "c") 'compile
+  (kbd "n") 'next-error
+  (kbd "w") 'sdic-describe-word
+  (kbd "W") 'sdic-describe-word-at-point
+  (kbd "l") 'org-store-link
+  (kbd "a") 'org-agenda)
 
 
 
 ;; emacs lisp
 (define-keys emacs-lisp-mode-map
-    (kbd "C-c C-l") 'load-file)
-    
+  (kbd "C-c C-l") 'load-file)
+
 ;; yasnippet
 (define-keys yas/minor-mode-map
-    (kbd "C-x y") 'yas/register-oneshot-snippet
-    (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
+  (kbd "C-x y") 'yas/register-oneshot-snippet
+  (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
 (setq yas/trigger-key "TAB")
 
 ;; auto-complete

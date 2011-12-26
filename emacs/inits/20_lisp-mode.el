@@ -1,9 +1,9 @@
 ;;;; lisp系のモードに関する設定
 ;;;; CL,Scheme,Clojure,slime,HyperSpecを含む
-;;;; Last Updated : 2011/08/28 02:40
+;;;; Last Updated : 2011/11/18 23:13
 
 (require 'slime)
-(require 'clojure-mode)
+;; (require 'clojure-mode)
 ;; (require 'swank-clojure)
 ;;(require 'scheme-complete)
 ;(require 'quack)
@@ -59,7 +59,6 @@
 (add-hook 'lisp-mode-hook (lambda ()
                             (slime-mode t)
                             (show-paren-mode t)))
-
 
 ;;slimeで日本語を使うための設定．Lisp側の対応も必要
 (setq slime-net-coding-system 'utf-8-unix)

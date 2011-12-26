@@ -16,7 +16,7 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/org-googlecl/")
 (add-to-list 'load-path "~/.emacs.d/elisp/fsharp-mode/fsharp/")
 (add-to-list 'load-path "~/.emacs.d/elisp/hippie-expand-utility/")
-
+(add-to-list 'load-path "~/.emacs.d/elisp/emacs-w3m/")
 
 (require 'cl)
 (require 'init-loader)
@@ -28,4 +28,4 @@
 	("marmalade" . "http://marmalade-repo.org/packages/")))
 (setq package-user-dir (concat user-emacs-directory "plugins/elpa"))
 
-(init-loader-load "~/.emacs.d/inits")
+(init-loader-load "~/.emacs.d/emacs/inits")

@@ -1,4 +1,4 @@
-;;;; Last Updated : 2011/08/30 23:38
+;;;; Last Updated : 2011/11/18 23:12
 
 (defmacro define-keys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)
@@ -35,30 +35,13 @@
     (kbd "S") 'scheme-other-window
     )
 
-;; lisp
-(define-keys lisp-mode-map
-    (kbd "(") 'insert-parentheses
-    (kbd "M-(") (lambda () (interactive) (insert "("))
-    (kbd ")") 'move-past-close-and-reindent
-    (kbd "M-)") (lambda () (interactive) (insert ")")))
 
 ;; emacs lisp
 (define-keys emacs-lisp-mode-map
-    (kbd "(") 'insert-parentheses
-    (kbd "M-(") (lambda () (interactive) (insert "("))
-    (kbd ")") 'move-past-close-and-reindent
-    (kbd "M-)") (lambda () (interactive) (insert ")"))
     (kbd "C-c C-l") 'load-file)
 
 
     
-;; lisp-interaction (emacs-lisp)
-(define-keys lisp-interaction-mode-map
-    (kbd "(") 'insert-parentheses
-    (kbd "M-(") (lambda () (interactive) (insert "("))
-    (kbd ")") 'move-past-close-and-reindent
-    (kbd "M-)") (lambda () (interactive) (insert ")")))
-
 ;; yasnippet
 (define-keys yas/minor-mode-map
     (kbd "C-x y") 'yas/register-oneshot-snippet
@@ -69,8 +52,3 @@
 (define-keys ac-completing-map
   (kbd "C-n") 'ac-next
   (kbd "C-p") 'ac-previous)
-
-
-
-
-  

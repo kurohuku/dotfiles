@@ -1,7 +1,12 @@
-;;;; Last Updated : 2011/08/30 23:25
+;;;; Last Updated : 2011/11/06 00:02
 
 (require 'org-install)
 (require 'org)
+;; (require 'org-capture)
+(require 'org-publish)
+(require 'org-html)
+
+(load "~/.org-publish-project-alist.el")
 (org-remember-insinuate)
 
 
@@ -44,3 +49,4 @@
 	("Library" . nil)
 	("DB" . nil)
 	))
+
