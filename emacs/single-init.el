@@ -3,8 +3,9 @@
   (expand-file-name path user-emacs-directory))
 
 (add-to-list 'load-path (elisp-dir "auto-install"))
-
-
+(add-to-list 'load-path (elisp-dir "package"))
+(add-to-list 'load-path (elisp-dir "elisp"))
+(add-to-list 'load-path (elisp-dir "elisp/sdic/lisp"))
 
 
 (require 'cl)
@@ -296,14 +297,15 @@
 (autoload 'sdic-describe-word "sdic" "英単語の意味を調べる" t nil)
 (autoload 'sdic-describe-word-at-point "sdic" "カーソル位置の英単語の意味を調べる" t nil)
 (setq
- sdic-eiwa-dictionary-list `((sdicf-client ,(elisp-dir "sidc/gene.sdic")))
- sdic-waei-dictionary-list `((sdicf-client ,(elisp-dir "jedict.sdic"))))
+ sdic-eiwa-dictionary-list `((sdicf-client ,(elisp-dir "elisp/sdic/gene.sdic")))
+ sdic-waei-dictionary-list `((sdicf-client ,(elisp-dir "elisp/sdic/jedict.sdic"))))
 (setq sdic-default-coding-system 'utf-8)
 
 ;; yasnippet
 (setq yas/trigger-key "TAB")
-;;(require 'yasnippet-config)
+(add-to-list 'load-path (elisp-dir "package/yasnippet-0.6.1/"))
 (require 'yasnippet)
+(require 'yasnippet-config)
 (yas/setup (elisp-dir "package/yasnippet-0.6.1/"))
 
 (setq yas/buffer-local-condition
@@ -316,33 +318,28 @@
 ;; anything
 (require 'anything-startup)
 
+;; my utility
+(require 'kmkr)
 
-;; keybindings
-(defmacro define-keys (map &rest clauses)
-  (let ((definitions ;; ((key command) ...)
-	  (loop for rest on clauses by 'cddr
-		collect (subseq rest 0 2))))
-    `(progn
-       ,@(mapcar
-	  (lambda (def)
-	    `(define-key ,map ,(car def) ,(cadr def)))
-	  definitions))))
+;; keymap
+(defvar anything-prefix-map (make-sparse-keymap))
+
 
 ;; global
-(define-keys global-map
+(kr:defkeys global-map
   (kbd "M-?") 'help
   (kbd "M-0") 'anything
   (kbd "C-h") 'delete-backward-char
-  (kbd "C-t") 'other-window-or-split
-  (kbd "C-o") 'my-ctrl-o
-  (kbd "C-a") 'move-beginning-of-line+scroll-down
-  (kbd "C-e") 'move-end-of-line+scroll-up
+  (kbd "C-t") 'kr:other-window-or-split
+  (kbd "C-o") anything-prefix-map
+  (kbd "C-a") 'kr:move-bol+scroll-down
+  (kbd "C-e") 'kr:move-eol+scroll-up
   (kbd "M-<Return>") 'newline
   (kbd "<Return>") 'newline-and-indent
   )
 
 ;; mode-specific (C-c `key')
-(define-keys mode-specific-map
+(kr:defkeys mode-specific-map
   (kbd "c") 'compile
   (kbd "n") 'next-error
   (kbd "w") 'sdic-describe-word
@@ -353,17 +350,22 @@
 
 
 ;; emacs lisp
-(define-keys emacs-lisp-mode-map
+(kr:defkeys emacs-lisp-mode-map
   (kbd "C-c C-l") 'load-file)
 
 ;; yasnippet
-(define-keys yas/minor-mode-map
+(kr:defkeys yas/minor-mode-map
   (kbd "C-x y") 'yas/register-oneshot-snippet
   (kbd "C-x C-y") 'yas/expand-oneshot-snippet)
 (setq yas/trigger-key "TAB")
 
 ;; auto-complete
-(define-keys ac-completing-map
+(kr:defkeys ac-completing-map
   (kbd "C-n") 'ac-next
   (kbd "C-p") 'ac-previous)
 
+(kr:defkeys anything-prefix-map
+  (kbd "o") 'anything-at-point
+  (kbd "y") 'anything-show-kill-ring
+  )
+  
