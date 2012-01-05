@@ -190,6 +190,13 @@
   (error nil))
 
 ;; common lisp
+(add-to-list 'load-path
+	     (elisp-dir "slime"))
+(add-to-list 'load-path
+	     (elisp-dir "slime/contrib"))
+(add-to-list 'load-path
+	     (elisp-dir "package/ac-slime-0.1"))
+	     
 (condition-case nil
     (progn
       (require 'slime)
@@ -209,11 +216,11 @@
 	       ("lx86cl")
 	       :coding-system utf-8-unix)
 	      (ccl64
-	       ("lx86cl64"))
+	       ("lx86cl64")
 	      :coding-system utf-8-unix)
 	    (sbcl
 	     ("sbcl")
-	     :coding-system utf-8-unix))
+	     :coding-system utf-8-unix)))
       (add-hook 'slime-mode-hook
 		(lambda ()
 		  (setq lisp-indent-function 'common-lisp-indent-function))
