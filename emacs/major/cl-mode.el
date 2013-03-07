@@ -1,12 +1,11 @@
 
 (progn
   (require 'slime)
-  (require 'ac-slime)
   (setq inferior-lisp-program "ccl64")
   (setq slime-backend "swank-loader.lisp")
   (setq slime-enable-evaluate-in-emacs t)
   (setq inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
-  (slime-setup '(inferior-slime slime-c-p-c slime-repl))
+  (slime-setup '(inferior-slime slime-repl))
   (add-hook 'lisp-mode-hook (lambda ()
 			      (slime-mode t)
 			      (show-paren-mode t)))
