@@ -60,8 +60,9 @@
 ;;; narrowingの許可
 (put 'narrow-to-region 'disabled nil)
 
-(partial-completion-mode 1)
-(setq completion-ignore-case t)
+(when (eq emacs-major-version 23)
+  (partial-completion-mode 1)
+  (setq completion-ignore-case t))
 
 ;;; 行の折り返し
 (setq truncate-lines t)

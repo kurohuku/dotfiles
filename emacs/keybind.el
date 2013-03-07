@@ -6,16 +6,12 @@
 ;; global
 (u:defkeys global-map
   (kbd "M-?") 'help
-  (kbd "M-0") 'anything
-  (kbd "M-x") 'anything-M-x
   (kbd "C-h") 'delete-backward-char
   (kbd "C-t") 'u:other-window-or-split
-  (kbd "C-o") anything-prefix-map
   (kbd "C-w") 'u:kill-word-or-active-region
   (kbd "M-w") 'u:copy-word-or-active-region
   (kbd "C-a") 'u:move-bol+scroll-down
   (kbd "C-e") 'u:move-eol+scroll-up
-  (kbd "C-x b") 'anything-buffers+
   (kbd "M-<Return>") 'newline
   (kbd "<Return>") 'newline-and-indent
   (kbd "C-;") 'dabbrev-expand
