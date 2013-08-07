@@ -1,7 +1,7 @@
 
 ;; keybind
 
-(defvar anything-prefix-map (make-sparse-keymap))
+(defvar helm-prefix-map (make-sparse-keymap))
 
 ;; global
 (u:defkeys global-map
@@ -15,6 +15,10 @@
   (kbd "M-<Return>") 'newline
   (kbd "<Return>") 'newline-and-indent
   (kbd "C-;") 'dabbrev-expand
+  (kbd "M-x") 'helm-M-x
+  (kbd "C-x b") 'helm-buffers-list
+  (kbd "C-o") helm-prefix-map
+  (kbd "C-z") 'eshell
   )
 
 ;; mode-specific (C-c `key')
@@ -33,10 +37,12 @@
   (kbd "C-n") 'ac-next
   (kbd "C-p") 'ac-previous)
 
-(u:defkeys anything-prefix-map
-  (kbd "o") 'anything-at-point
-  (kbd "y") 'anything-show-kill-ring
-  (kbd "b") 'anything-bookmarks)
+(u:defkeys helm-prefix-map
+  (kbd "o") 'helm-mini
+  (kbd "y") 'helm-show-kill-ring
+  (kbd "m") 'helm-all-mark-rings
+  (kbd "b") 'helm-bookmarks)
+
 
 
 (require 'guide-key)

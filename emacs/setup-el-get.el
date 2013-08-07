@@ -26,6 +26,8 @@
 	package
 	guide-key
 	smartrep
+	gist
+	d-mode
 	))
 
 (setq el-get-sources
@@ -38,3 +40,4 @@
 (el-get 'sync my-packages)
 
 
+;; 	sublimity
