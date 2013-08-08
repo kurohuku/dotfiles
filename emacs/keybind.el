@@ -16,7 +16,7 @@
   (kbd "<Return>") 'newline-and-indent
   (kbd "C-;") 'dabbrev-expand
   (kbd "M-x") 'helm-M-x
-  (kbd "C-x b") 'helm-buffers-list
+  (kbd "C-x b") 'helm-mini
   (kbd "C-o") helm-prefix-map
   (kbd "C-z") 'eshell
   )
@@ -38,12 +38,14 @@
   (kbd "C-p") 'ac-previous)
 
 (u:defkeys helm-prefix-map
-  (kbd "o") 'helm-mini
+  (kbd "o") 'helm-occur
   (kbd "y") 'helm-show-kill-ring
-  (kbd "m") 'helm-all-mark-rings
-  (kbd "b") 'helm-bookmarks)
+  (kbd "<SPC>") 'helm-all-mark-rings
+  (kbd "i") 'helm-imenu)
 
-
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history)))
 
 (require 'guide-key)
 (setq guide-key/guide-key-sequence
