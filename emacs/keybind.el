@@ -31,6 +31,7 @@
   (kbd "a") 'org-agenda)
 
 (u:defkeys emacs-lisp-mode-map
+  (kbd "M-.") 'find-function
   (kbd "C-c C-l") 'load-file)
 
 (u:defkeys ac-completing-map
