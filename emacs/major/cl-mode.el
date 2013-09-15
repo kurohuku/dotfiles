@@ -8,6 +8,7 @@
   (slime-setup '(inferior-slime slime-repl))
   (add-hook 'lisp-mode-hook (lambda ()
 			      (slime-mode t)
+                              (paredit-mode 1)
 			      (show-paren-mode t)))
   (setq slime-net-coding-system 'utf-8-unix)
   (setq slime-lisp-implementations

@@ -28,6 +28,7 @@
 	smartrep
 	gist
 	d-mode
+        paredit
 	))
 
 (setq el-get-sources
