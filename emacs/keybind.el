@@ -2,23 +2,40 @@
 ;; keybind
 
 (defvar helm-prefix-map (make-sparse-keymap))
+(defvar smartrep-prefix-map (make-sparse-keymap))
+
+(require 'smartrep)
 
 ;; global
 (u:defkeys global-map
-  (kbd "M-?") 'help
-  (kbd "C-h") 'delete-backward-char
-  (kbd "C-t") 'u:other-window-or-split
-  (kbd "C-w") 'u:kill-word-or-active-region
-  (kbd "M-w") 'u:copy-word-or-active-region
-  (kbd "C-a") 'u:move-bol+scroll-down
-  (kbd "C-e") 'u:move-eol+scroll-up
-  (kbd "M-<Return>") 'newline
   (kbd "<Return>") 'newline-and-indent
   (kbd "C-;") 'dabbrev-expand
-  (kbd "M-x") 'helm-M-x
-  (kbd "C-x b") 'helm-mini
+  (kbd "C-a") 'u:move-bol+scroll-down
+  (kbd "C-e") 'u:move-eol+scroll-up
+  (kbd "C-h") 'delete-backward-char
   (kbd "C-o") helm-prefix-map
+  (kbd "C-r") smartrep-prefix-map
+  (kbd "C-t") 'u:other-window-or-split
+  (kbd "C-w") 'u:kill-word-or-active-region
+  (kbd "C-x b") 'helm-mini
   (kbd "C-z") 'eshell
+  (kbd "M-<Return>") 'newline
+  (kbd "M-?") 'help
+  (kbd "M-w") 'u:copy-word-or-active-region
+  (kbd "M-x") 'helm-M-x
+  )
+
+;; smartrep
+(smartrep-define-key global-map "C-r"
+  `(("h" . 'backward-char)
+    ("j" . 'next-line)
+    ("k" . 'previous-line)
+    ("l" . 'forward-char)
+    ("n" . 'scroll-up)
+    ("p" . 'scroll-down)
+
+    ("." . 'highlight-symbol-next)
+    ("," . 'highlight-symbol-prev))
   )
 
 ;; mode-specific (C-c `key')
@@ -47,6 +64,11 @@
 (add-hook 'eshell-mode-hook
           (lambda ()
             (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history)))
+
+(add-hook 'paredit-mode-hook
+          (lambda ()
+            (define-key paredit-mode-map
+              (kbd "C-h") 'paredit-backward-delete)))
 
 (require 'guide-key)
 (setq guide-key/guide-key-sequence

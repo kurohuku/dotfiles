@@ -16,3 +16,7 @@
 (require 'qiita)
 (require 'gist)
 
+(require 'highlight-symbol)
+
+;; for `describe-keymap'
+(require 'help-fns)

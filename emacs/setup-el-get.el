@@ -29,6 +29,7 @@
 	gist
 	d-mode
         paredit
+        help-fns+
 	))
 
 (setq el-get-sources
