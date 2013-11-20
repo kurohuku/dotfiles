@@ -5,7 +5,7 @@
   (setq slime-backend "swank-loader.lisp")
   (setq slime-enable-evaluate-in-emacs t)
   (setq inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
-  (slime-setup '(inferior-slime slime-repl))
+  (slime-setup '(slime-fancy))
   (add-hook 'lisp-mode-hook (lambda ()
 			      (slime-mode t)
                               (paredit-mode 1)
