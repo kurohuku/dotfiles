@@ -59,7 +59,8 @@
   (kbd "o") 'helm-occur
   (kbd "y") 'helm-show-kill-ring
   (kbd "<SPC>") 'helm-all-mark-rings
-  (kbd "i") 'helm-imenu)
+  (kbd "i") 'helm-imenu
+  (kbd "r") 'helm-recentf)
 
 (add-hook 'eshell-mode-hook
           (lambda ()

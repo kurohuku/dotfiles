@@ -13,15 +13,15 @@
 (setq my-packages
       '(helm
 	clojure-mode
-	nrepl
-	nrepl-ritz
+;;	nrepl
+;;	nrepl-ritz
 	auto-complete
 	popwin
 	markdown-mode
 	slime
 	mic-paren
 	highlight-symbol
-	geiser
+;;	geiser
 	yasnippet
 	package
 	guide-key
@@ -30,6 +30,7 @@
 	d-mode
         paredit
         help-fns+
+        arduino-mode
 	))
 
 (setq el-get-sources
@@ -40,6 +41,5 @@
 	))
 
 (el-get 'sync my-packages)
-
 
 ;; 	sublimity
