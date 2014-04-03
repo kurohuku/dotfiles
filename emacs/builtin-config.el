@@ -1,32 +1,5 @@
 (require 'cl)
 
-(defvar *scratch-file* "~/.scratch.org")
-(defun init-scratch-buffer ()
-  (let ((buf (get-buffer "*scratch*")))
-    (when buf
-      (save-excursion
-	(with-current-buffer buf
-	  (erase-buffer)
-	  (org-mode)
-	  (insert
-	   (format "* [%s]"
-		   (format-time-string "%Y/%m/%d %H:%M:%S"))))))))
-(defun save-scratch-buffer ()
-  (let ((buf (get-buffer "*scratch*")))
-    (when buf
-      (save-excursion
-	(with-current-buffer buf
-	  (append-to-file (point-min) (point-max) *scratch-file*))))))
-(defun save-scratch-kill-emacs-hook ()
-  (save-scratch-buffer))
-(defun save-scratch-kill-buffer-hook ()
-  (when (equal (current-buffer) (get-buffer "*scratch*"))
-    (save-scratch-buffer)))
-(add-hook 'after-init-hook 'init-scratch-buffer)
-(add-hook 'kill-emacs-hook 'save-scratch-kill-emacs-hook)
-(add-hook 'kill-buffer-hook 'save-scratch-kill-buffer-hook)
-
-
 (require 'package)
 (setq package-archives
       '(("ELPA" . "http://tromey.com/elpa/")

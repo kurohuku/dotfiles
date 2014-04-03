@@ -25,6 +25,11 @@
   (kbd "M-x") 'helm-M-x
   )
 
+;; C-x
+(u:defkeys ctl-x-map
+  (kbd "r r") 'mc/mark-all-in-region
+  (kbd "r l") 'mc/edit-lines)
+
 ;; smartrep
 (smartrep-define-key global-map "C-r"
   `(("h" . 'backward-char)

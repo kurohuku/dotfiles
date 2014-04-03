@@ -1,5 +1,5 @@
 
-(require 'mikutter)
+;;(require 'mikutter)
 
 (setq yas/trigger-key "TAB")
 (require 'yasnippet)
@@ -13,7 +13,7 @@
 (ac-config-default)
 (add-to-list 'ac-modes 'org-mode)
 
-(require 'qiita)
+;;(require 'qiita)
 (require 'gist)
 
 (require 'highlight-symbol)
