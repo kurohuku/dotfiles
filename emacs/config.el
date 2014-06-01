@@ -20,3 +20,5 @@
 
 ;; for `describe-keymap'
 (require 'help-fns)
+
+(require 'anzu)

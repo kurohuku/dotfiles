@@ -28,4 +28,4 @@
 (depends-on "arduino-mode")
 (depends-on "flycheck")
 (depends-on "magit")
-
+(depends-on "anzu")
