@@ -5,7 +5,8 @@
 (defvar *major-mode-config-dir*
   (expand-file-name "major" *config-dir*))
 
-(load (expand-file-name "cask" *cask-dir*))
+(require 'cask (expand-file-name "cask.el" *cask-dir*))
+(cask-initialize)
 
 (load (expand-file-name "util" *config-dir*))
 (load (expand-file-name "cmd" *config-dir*))
