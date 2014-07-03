@@ -68,3 +68,12 @@
 (setq time-stamp-line-limit 10)
 (setq time-stamp-start "Last Updated : ")
 
+(add-hook 'after-init-hook
+          (lambda ()
+            (with-current-buffer "*scratch*"
+              (erase-buffer)
+              (org-mode)
+              (insert
+               (format "* [%s]\n"
+                       (format-time-string "%Y/%m/%d %H:%M:%S"))))))
+

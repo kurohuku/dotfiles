@@ -12,5 +12,11 @@
           definitions))))
 (put 'u:defkeys 'lisp-indent-function 1)
 
+(cl-defmacro u:when-let ((var expr) &body body)
+  `(let ((,var ,expr))
+     (when ,var
+       ,@body)))
+(put 'u:when-let 'lisp-indent-function 1)
+
 (defmacro add-hook-fn (name &rest body)
   `(add-hook ,name #'(lambda () ,@body)))

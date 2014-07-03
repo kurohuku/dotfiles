@@ -29,3 +29,8 @@
 (depends-on "flycheck")
 (depends-on "magit")
 (depends-on "anzu")
+(depends-on "undo-tree")
+(depends-on "f")
+(depends-on "projectile")
+
+
