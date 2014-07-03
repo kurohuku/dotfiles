@@ -39,7 +39,7 @@
 
 ;;; 行の折り返し
 (setq truncate-lines t)
-(setq truncate-partial-width-windows t)
+(setq truncate-partial-width-windows nil)
 
 (setq message-log-max 200)
 (setq enable-recursive-minibuffers t)
@@ -77,3 +77,18 @@
                (format "* [%s]\n"
                        (format-time-string "%Y/%m/%d %H:%M:%S"))))))
 
+;; mode-line
+(setq my:mode-line-position
+      '((-3 "%p")
+        (size-indication-mode (8 " of %I"))
+        (line-number-mode
+         (column-number-mode
+          (10 " (%l/"
+              (:eval (format "%d" (line-number-at-pos (point-max))))
+              ",%c)")
+          (6 " L%l"))
+         (column-number-mode
+          (5 " C%c")))))
+
+(setq mode-line-format
+      (substitute 'my:mode-line-position 'mode-line-position mode-line-format))
