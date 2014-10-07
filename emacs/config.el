@@ -19,7 +19,8 @@
 (require 'highlight-symbol)
 
 ;; for `describe-keymap'
-(require 'help-fns)
+(require 'help-fns+)
 
 (require 'anzu)
 (global-anzu-mode +1)
+

@@ -23,12 +23,14 @@
   (kbd "M-?") 'help
   (kbd "M-w") 'u:copy-word-or-active-region
   (kbd "M-x") 'helm-M-x
+  (kbd "M-%") 'vr/query-replace
+  (kbd "C-<SPC>") 'u:set-mark-command-or-mark-sexp
   )
 
 ;; C-x
 (u:defkeys ctl-x-map
   (kbd "r r") 'mc/mark-all-in-region
-  (kbd "r l") 'mc/edit-lines)
+  (kbd "r l") 'vr/mc-mark)
 
 ;; smartrep
 (smartrep-define-key global-map "C-r"

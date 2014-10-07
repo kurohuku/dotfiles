@@ -32,5 +32,5 @@
 (depends-on "undo-tree")
 (depends-on "f")
 (depends-on "projectile")
-
+(depends-on "visual-regexp")
 

@@ -49,3 +49,10 @@
 	     (= (point) (line-end-position)))
     (call-interactively 'scroll-up))
   (call-interactively 'move-end-of-line))
+
+(defun u:set-mark-command-or-mark-sexp ()
+  (interactive)
+  (if (eq last-command 'mark-sexp)
+      (progn (call-interactively 'mark-sexp)
+             (setq this-command 'mark-sexp))
+    (call-interactively 'set-mark-command)))
