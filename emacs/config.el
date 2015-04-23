@@ -1,10 +1,9 @@
+;; -*- coding: utf-8 -*-
 
 ;;(require 'mikutter)
 
 (setq yas/trigger-key "TAB")
 (require 'yasnippet)
-;;(require 'anything-config)
-;;(require 'anything-match-plugin)
 (require 'helm-config)
 (require 'helm)
 

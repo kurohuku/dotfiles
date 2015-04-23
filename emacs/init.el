@@ -1,4 +1,4 @@
-
+;; -*- coding: utf-8 -*-
 
 (defvar *cask-dir* "")
 (defvar *config-dir* "")

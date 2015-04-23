@@ -1,3 +1,4 @@
+;; -*- coding: utf-8 -*-
 
 ;; keybind
 
@@ -69,14 +70,12 @@
   (kbd "i") 'helm-imenu
   (kbd "r") 'helm-recentf)
 
-(add-hook 'eshell-mode-hook
-          (lambda ()
-            (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history)))
+(with-eval-after-load 'eshell-mode
+  (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history))
 
-(add-hook 'paredit-mode-hook
-          (lambda ()
-            (define-key paredit-mode-map
-              (kbd "C-h") 'paredit-backward-delete)))
+(with-eval-after-load 'paredit-mode
+  (define-key paredit-mode-map
+    (kbd "C-h") 'paredit-backward-delete))
 
 (require 'guide-key)
 (setq guide-key/guide-key-sequence

@@ -1,4 +1,6 @@
-(require 'cl)
+;; -*- coding: utf-8 -*-
+
+(require 'cl-lib)
 
 (defun u:kill-word-or-active-region ()
   (interactive)

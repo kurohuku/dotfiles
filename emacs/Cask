@@ -1,4 +1,6 @@
+(source gnu)
 (source melpa)
+(source marmalade)
 
 (depends-on "cask")
 (depends-on "dash")
@@ -33,4 +35,8 @@
 (depends-on "f")
 (depends-on "projectile")
 (depends-on "visual-regexp")
-
+(depends-on "graphviz-dot-mode")
+(depends-on "emmet-mode")
+(depends-on "web-mode")
+(depends-on "runner")
+(depends-on "unify-opening")

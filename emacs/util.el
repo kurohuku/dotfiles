@@ -1,5 +1,6 @@
+;; -*- coding: utf-8 -*-
 
-(require 'cl)
+(require 'cl-lib)
 
 (defmacro u:defkeys (map &rest clauses)
   (let ((definitions ;; ((key command) ...)

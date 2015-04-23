@@ -1,3 +1,4 @@
+;; -*- coding: utf-8 -*-
 
 (progn
   (require 'slime)
@@ -9,6 +10,8 @@
   (add-hook 'lisp-mode-hook (lambda ()
 			      (slime-mode t)
                               (paredit-mode 1)
+                              (highlight-symbol-mode 1)
+                              (highlight-symbol-nav-mode 1)
 			      (show-paren-mode t)))
   (setq slime-net-coding-system 'utf-8-unix)
   (setq slime-lisp-implementations

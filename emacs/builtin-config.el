@@ -1,4 +1,6 @@
-(require 'cl)
+;; -*- coding: utf-8 -*-
+
+(require 'cl-lib)
 
 (require 'package)
 (setq package-archives
