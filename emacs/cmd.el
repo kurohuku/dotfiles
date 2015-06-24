@@ -58,3 +58,10 @@
       (progn (call-interactively 'mark-sexp)
              (setq this-command 'mark-sexp))
     (call-interactively 'set-mark-command)))
+
+(defun u:goto-dotfiles-dired ()
+  (interactive)
+  (dired
+   (file-name-directory
+    (symbol-file 'u:goto-dotfiles-dired 'defun))))
+

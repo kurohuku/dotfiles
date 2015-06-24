@@ -29,6 +29,11 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+(setq standard-indent 2)
+
+
 ;;; 動的略語展開
 (setq dabbrev-case-fold-search nil)
 

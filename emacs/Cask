@@ -40,3 +40,4 @@
 (depends-on "web-mode")
 (depends-on "runner")
 (depends-on "unify-opening")
+(depends-on "helm-swoop")

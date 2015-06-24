@@ -28,6 +28,10 @@
   (kbd "C-<SPC>") 'u:set-mark-command-or-mark-sexp
   )
 
+;; M-g
+(u:defkeys goto-map
+  (kbd "d") 'u:goto-dotfiles-dired)
+
 ;; C-x
 (u:defkeys ctl-x-map
   (kbd "r r") 'mc/mark-all-in-region
@@ -64,23 +68,31 @@
   (kbd "C-p") 'ac-previous)
 
 (u:defkeys helm-prefix-map
-  (kbd "o") 'helm-occur
+  (kbd "o") 'helm-swoop
+  (kbd "s") 'helm-multi-swoop
+  (kbd "S") 'helm-multi-swoop
   (kbd "y") 'helm-show-kill-ring
   (kbd "<SPC>") 'helm-all-mark-rings
+  (kbd "<RET>") 'helm-resume
   (kbd "i") 'helm-imenu
   (kbd "r") 'helm-recentf)
 
-(with-eval-after-load 'eshell-mode
-  (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history))
+(u:defkeys helm-map
+  (kbd "C-c n") 'helm-next-source
+  (kbd "C-c p") 'helm-previous-source)
 
-(with-eval-after-load 'paredit-mode
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (define-key eshell-mode-map (kbd "M-r") 'helm-eshell-history)))
+
+(with-eval-after-load 'paredit
   (define-key paredit-mode-map
     (kbd "C-h") 'paredit-backward-delete))
 
 (require 'guide-key)
 (setq guide-key/guide-key-sequence
       '("C-x r" "C-x v" "C-x RET"
-	"C-x C-k" "C-o"))
+        "C-x C-k" "C-o" "ESC g"))
 (defun guide-key/my-hook-function-for-org-mode ()
   (guide-key/add-local-guide-key-sequence "C-c")
   (guide-key/add-local-guide-key-sequence "C-c C-x")
