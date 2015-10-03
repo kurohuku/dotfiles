@@ -17,7 +17,11 @@
 (setq yes-or-no-p 'y-or-no-p)
 (setq compilation-window-height 12)
 (setq frame-title-format (concat "%b - emacs@" system-name))
+
 (setq inhibit-startup-message t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
 (when (fboundp 'global-font-lock-mode)
   (global-font-lock-mode t))
 (line-number-mode 1)

@@ -23,3 +23,4 @@
 (require 'anzu)
 (global-anzu-mode +1)
 
+(highlight-symbol-mode +1)

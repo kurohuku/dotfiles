@@ -41,3 +41,4 @@
 (depends-on "runner")
 (depends-on "unify-opening")
 (depends-on "helm-swoop")
+(depends-on "wgrep")
