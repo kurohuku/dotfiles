@@ -2,16 +2,6 @@
 
 (require 'cl-lib)
 
-(require 'package)
-(setq package-archives
-      '(("ELPA" . "http://tromey.com/elpa/")
-	("gnu" . "http://elpa.gnu.org/packages/")
-	("marmalade" . "http://marmalade-repo.org/packages/")
-	("melpa" . "http://melpa.milkbox.net/packages/")))
-
-(setq package-user-dir (concat user-emacs-directory "package"))
-
-
 (setq x-select-enable-clipboard t)
 (set-default-coding-systems 'utf-8)
 (setq yes-or-no-p 'y-or-no-p)
@@ -102,4 +92,4 @@
           (5 " C%c")))))
 
 (setq mode-line-format
-      (substitute 'my:mode-line-position 'mode-line-position mode-line-format))
+      (cl-substitute 'my:mode-line-position 'mode-line-position mode-line-format))
