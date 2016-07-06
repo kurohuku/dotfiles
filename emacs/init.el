@@ -1,12 +1,10 @@
 ;; -*- coding: utf-8 -*-
 
-(defvar *cask-dir* "")
 (defvar *config-dir* "")
 (defvar *major-mode-config-dir*
   (expand-file-name "major" *config-dir*))
 
-(require 'cask (expand-file-name "cask.el" *cask-dir*))
-(cask-initialize)
+(load (expand-file-name "setup-packages" *config-dir*))
 
 (load (expand-file-name "util" *config-dir*))
 (load (expand-file-name "cmd" *config-dir*))
@@ -23,5 +21,3 @@
 
 (load (expand-file-name "config" *config-dir*))
 (load (expand-file-name "keybind" *config-dir*))
-
-

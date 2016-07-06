@@ -24,3 +24,8 @@
 (global-anzu-mode +1)
 
 (highlight-symbol-mode +1)
+
+(global-ace-isearch-mode +1)
+(custom-set-variables
+ '(ace-isearch-input-length 10))
+
