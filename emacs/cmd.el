@@ -47,7 +47,7 @@
 
 (defun u:move-eol+scroll-up ()
   (interactive)
-  (when (and (eq last-command 'move-eol+scroll-up)
+  (when (and (eq last-command 'u:move-eol+scroll-up)
 	     (= (point) (line-end-position)))
     (call-interactively 'scroll-up))
   (call-interactively 'move-end-of-line))
