@@ -13,6 +13,10 @@
 (setq org-babel-inline-lob-one-liner-regexp "^^"
       org-babel-lob-one-liner-regexp (concat "\\(" org-babel-block-lob-one-liner-regexp "\\)"))
 
+
+(add-to-list 'org-agenda-files "~/.emacs.d/org/task.org")
+(add-to-list 'org-agenda-files "~/.emacs.d/org/memo.org")
+
 (setq org-directory "~/.emacs.d/org/")
 
 (setq org-capture-templates
