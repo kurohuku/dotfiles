@@ -10,6 +10,7 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; メジャーモード
 (package-install 'markdown-mode)
 (package-install 'clojure-mode)
 (package-install 'arduino-mode)
@@ -19,7 +20,9 @@
 (package-install 'rust-mode)
 (package-install 'groovy-mode)
 
-(package-install 'ace-jump-mode)
+;; その他
+;;(package-install 'ace-jump-mode)
+(package-install 'avy)
 
 (package-install 'ace-isearch)
 (package-install 'anzu)
@@ -56,5 +59,9 @@
 (package-install 'which-key)
 (package-install 'wrap-region)
 (package-install 'yasnippet)
+(package-install 'neotree)
+(package-install 'ddskk)
+(package-install 'e2wm)
+(package-install 'migemo)
 
 

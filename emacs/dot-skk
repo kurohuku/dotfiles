@@ -1,0 +1,14 @@
+;; DDSKK 設定
+
+(setq skk-use-azik t)
+(setq skk-egg-like-newline t)
+
+(add-to-list 'skk-rom-kana-rule-list
+             '("x:" nil ":"))
+(add-to-list 'skk-rom-kana-rule-list
+             '("-" nil "-"))
+
+(setq skk-rom-kana-rule-list
+      (remove* "dh" skk-rom-kana-rule-list :test 'equal :key 'car))
+
+      

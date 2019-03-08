@@ -2,6 +2,9 @@
 
 (require 'cl-lib)
 
+(set-language-environment "Japanese")
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 (setq x-select-enable-clipboard t)
 (set-default-coding-systems 'utf-8)
 (setq yes-or-no-p 'y-or-no-p)
@@ -93,3 +96,6 @@
 
 (setq mode-line-format
       (cl-substitute 'my:mode-line-position 'mode-line-position mode-line-format))
+
+;; dired
+(setq dired-isearch-filenames t)

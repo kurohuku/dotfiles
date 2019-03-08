@@ -24,3 +24,7 @@
          "* TODO %?\n %T\n %i\n")
         ("m" "Memo" entry (file "~/.emacs.d/org/memo.org")
          "* %?\n %T\n")))
+
+(add-to-list 'org-file-apps '("\\.xlsx" . default))
+
+

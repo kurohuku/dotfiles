@@ -12,6 +12,8 @@
 (bind-key* "C-t" 'u:other-window-or-split)
 
 (bind-key "<Return>" 'newline-and-indent)
+(bind-key "C-\\" 'skk-mode)
+(bind-key "<f2>" 'neotree-toggle)
 (bind-key* "C-;" 'dabbrev-expand)
 (bind-key* "C-a" 'u:move-bol+scroll-down)
 (bind-key* "C-e" 'u:move-eol+scroll-up)
@@ -43,6 +45,10 @@
 (bind-key "h" mnemonic-help-map mnemonic-prefix-map)
 (bind-key "w" mnemonic-window-map mnemonic-prefix-map)
 (bind-key "j" mnemonic-jump-map mnemonic-prefix-map)
+
+(bind-keys :map mnemonic-search-map
+           ("g" . grep)
+           ("f" . find-grep))
 
 (bind-keys :map mnemonic-jump-map
            ("j" . ace-jump-mode)
@@ -85,7 +91,9 @@
            ("<SPC>" . helm-all-mark-rings)
            ("<RET>" . helm-resume)
            ("i" . helm-imenu)
-           ("r" . helm-recentf))
+           ("r" . helm-recentf)
+           ("b" . helm-mini)
+           ("c" . org-capture))
 
 (bind-keys :map helm-map
            ("C-c n" . helm-next-source)
@@ -101,3 +109,5 @@
 
 (which-key-mode)
 (which-key-setup-side-window-right-bottom)
+
+(setq skk-use-azik t)
